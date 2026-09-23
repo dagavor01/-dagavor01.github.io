@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html><head><title>Aristide Mebe - dagavor01</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font-family:sans-serif;text-align:center;padding:20px;background:#001a33;color:white}.box{background:white;color:black;padding:20px;border-radius:15px;max-width:400px;margin:auto}button{padding:15px;background:#00a859;color:white;border:none;border-radius:8px;width:100%;font-weight:bold}</style>
+</head><body><div class="box">
+<h1>Aristide Mebe</h1><p><b>Yaoundé | dagavor01</b></p>
+<p>Mon 1er site officiel ! Je code des apps anti-arnaque.</p>
+<input id="m" type="number" value="5000" style="padding:12px;width:80%;text-align:center;border:2px solid #004aad;border-radius:8px"><br><br>
+<button onclick="let v=document.getElementById('m').value;let g=v*0.15;document.getElementById('r').innerHTML='Gain: '+g+' FCFA<br>Total: '+(parseInt(v)+g)">CALCULER MON BENEFICE</button>
+<h2 id="r" style="color:green"></h2></div>
+<p style="margin-top:15px">✅ https://dagavor01.github.io</p>
+</body></html>
