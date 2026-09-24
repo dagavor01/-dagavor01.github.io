@@ -12,6 +12,7 @@ h2{color:#0a5c36;margin:5px 0} .sub{color:#ff8c00;font-weight:bold;margin-bottom
 input{width:90%;padding:13px;border:2px solid #ddd;border-radius:10px;margin:10px 0}
 button{padding:13px 25px;background:#0a5c36;color:white;border:0;border-radius:10px;font-weight:bold;width:90%;font-size:16px}
 #res{margin-top:15px;background:#ffecec;padding:12px;border-radius:10px;word-break:break-all;display:none;text-align:left}
+.wa{display:block;background:#25D366;color:white;padding:13px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:15px}
 </style>
 </head>
 <body>
@@ -19,11 +20,16 @@ button{padding:13px 25px;background:#0a5c36;color:white;border:0;border-radius:1
 <div class="logo">🛡️</div>
 <h2>DAGAVOR</h2>
 <div class="sub">- Décodeur 237 -</div>
-<p><b>Colle ton SMS MTN / Orange suspect ici :</b></p>
+<p><b>Colle ton SMS MTN / Orange suspect :</b></p>
 <input id="c" placeholder="Ex: aHR0cHM6Ly9mYWtl...">
-<button onclick="decoder()">🔍 Décoder le lien caché</button>
+<button onclick="decoder()">🔍 Décoder le lien</button>
 <div id="res"></div>
-<p style="font-size:11px;color:#888;margin-top:20px">Anti-arnaque Mobile Money - Yaoundé, Cameroun<br>Ne clique jamais sur un lien douteux.</p>
+
+<a class="wa" href="https://wa.me/237655166310?text=Salut%20Dagavor%20!%20Je%20viens%20de%20ton%20site%20et%20j%27ai%20re%C3%A7u%20un%20SMS%20suspect.">
+💬 Parler à Dagavor sur WhatsApp
+</a>
+
+<p style="font-size:11px;color:#888;margin-top:20px">Anti-arnaque Mobile Money - Yaoundé<br>655 16 63 10</p>
 </div>
 <script>
 function decoder(){
@@ -31,11 +37,11 @@ try{
 var t=atob(document.getElementById('c').value);
 var d=document.getElementById('res');
 d.style.display='block';
-d.innerHTML='<b>⚠️ VRAI LIEN CACHÉ :</b><br><a href="'+t+'" target="_blank" style="color:red;font-weight:bold">'+t+'</a><br><br>Si ce n\'est pas mtn.cm ou orange.cm, c\'est une ARNAQUE !';
+d.innerHTML='<b>⚠️ VRAI LIEN :</b><br><a href="'+t+'" target="_blank" style="color:red;font-weight:bold">'+t+'</a><br><br>Si ce n\'est pas mtn.cm ou orange.cm, c\'est une ARNAQUE !';
 }catch(e){
 var d=document.getElementById('res');
 d.style.display='block';
-d.innerHTML='❌ Code invalide. Colle tout le code bizarre reçu par SMS.';
+d.innerHTML='❌ Code invalide';
 }
 }
 </script>
