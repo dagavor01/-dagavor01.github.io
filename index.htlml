@@ -1,48 +1,84 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DAGAVOR - Décodeur 237</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAGAVOR - Anti-Arnaque 237 + Crypto</title>
 <style>
-body{background:#f0f2f5;font-family:sans-serif;display:flex;justify-content:center;padding:20px}
-.card{background:white;padding:25px;border-radius:20px;box-shadow:0 10px 30px #0002;max-width:380px;width:100%;text-align:center}
-.logo{width:120px;height:120px;background:#0a5c36;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:60px;border:5px solid #ff8c00}
-h2{color:#0a5c36;margin:5px 0} .sub{color:#ff8c00;font-weight:bold;margin-bottom:15px}
-input{width:90%;padding:13px;border:2px solid #ddd;border-radius:10px;margin:10px 0}
-button{padding:13px 25px;background:#0a5c36;color:white;border:0;border-radius:10px;font-weight:bold;width:90%;font-size:16px}
-#res{margin-top:15px;background:#ffecec;padding:12px;border-radius:10px;word-break:break-all;display:none;text-align:left}
-.wa{display:block;background:#25D366;color:white;padding:13px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:15px}
+body{background:#000;color:#fff;font-family:monospace;text-align:center;margin:0;padding:20px}
+.badge{position:fixed;top:10px;right:10px;background:#111;color:#00FF88;padding:5px 10px;border-radius:20px;font-size:11px;border:1px solid #00FF88;z-index:999}
+.box{border:2px solid #ff8c00;border-radius:15px;padding:20px;max-width:400px;margin:50px auto 15px}
+input{width:90%;padding:12px;border-radius:10px;border:none;margin-top:10px;font-weight:bold}
+button{width:90%;padding:12px;margin-top:12px;background:#00FF88;border:none;border-radius:10px;font-weight:bold;cursor:pointer}
+.btn2{background:#ff8c00}
+#result,#cryptoResult{display:none;text-align:left;background:#111;padding:15px;border-radius:10px;margin-top:15px;word-break:break-all;font-size:13px}
+a{color:#00FF88;text-decoration:none;font-weight:bold}
+.link-btn{display:block;background:#333;color:#fff;padding:10px;border-radius:8px;text-align:center;margin-top:10px;border:1px solid #00FF88}
 </style>
 </head>
 <body>
-<div class="card">
-<div class="logo">🛡️</div>
+<div class="badge">🛡️ OPEN SOURCE</div>
+
+<div class="box">
+<div style="font-size:60px">🛡️</div>
 <h2>DAGAVOR</h2>
-<div class="sub">- Décodeur 237 -</div>
-<p><b>Colle ton SMS MTN / Orange suspect :</b></p>
-<input id="c" placeholder="Ex: aHR0cHM6Ly9mYWtl...">
-<button onclick="decoder()">🔍 Décoder le lien</button>
-<div id="res"></div>
 
-<a class="wa" href="https://wa.me/237655166310?text=Salut%20Dagavor%20!%20Je%20viens%20de%20ton%20site%20et%20j%27ai%20re%C3%A7u%20un%20SMS%20suspect.">
-💬 Parler à Dagavor sur WhatsApp
-</a>
+<input id="sms" type="text" placeholder="Colle SMS MTN/Orange suspect">
+<button onclick="decoderSMS()">🔍 Décoder SMS</button>
+<div id="result"></div>
 
-<p style="font-size:11px;color:#888;margin-top:20px">Anti-arnaque Mobile Money - Yaoundé<br>655 16 63 10</p>
+<hr style="margin:20px 0;border:0;border-top:1px solid #333">
+
+<h3 style="color:#ff8c00">💰 Verif Wallet Crypto</h3>
+<input id="wallet" type="text" placeholder="Colle adresse BTC, ETH, USDT...">
+<button onclick="verifWallet()" class="btn2">🛡️ Vérifier Wallet</button>
+<div id="cryptoResult"></div>
+
+<p style="font-size:12px;margin-top:15px">Signale: <a href="https://wa.me/237655166310">+237 655 16 63 10</a></p>
 </div>
+
 <script>
-function decoder(){
-try{
-var t=atob(document.getElementById('c').value);
-var d=document.getElementById('res');
-d.style.display='block';
-d.innerHTML='<b>⚠️ VRAI LIEN :</b><br><a href="'+t+'" target="_blank" style="color:red;font-weight:bold">'+t+'</a><br><br>Si ce n\'est pas mtn.cm ou orange.cm, c\'est une ARNAQUE !';
-}catch(e){
-var d=document.getElementById('res');
-d.style.display='block';
-d.innerHTML='❌ Code invalide';
+function decoderSMS(){
+ let lien=document.getElementById('sms').value;
+ let res=document.getElementById('result');
+ if(!lien){alert('Colle un lien');return;}
+ res.style.display='block';
+ let isSafe = lien.includes('mtn.cm') || lien.includes('orange.cm');
+ if(isSafe){res.innerHTML='✅ <b style="color:#00FF88">SITE OFFICIEL</b><br>'+lien;}
+ else{res.innerHTML='❌ <b style="color:red">ARNAQUE DÉTECTÉE !</b><br>'+lien;}
 }
+
+function verifWallet(){
+ let w=document.getElementById('wallet').value.trim();
+ let r=document.getElementById('cryptoResult');
+ r.style.display='block';
+ if(!w){r.innerHTML='Colle une adresse';return;}
+ 
+ let type='Inconnu';
+ let explorerUrl='';
+ let explorerName='';
+
+ if(w.startsWith('1') || w.startsWith('3') || w.startsWith('bc1')){
+   type='BTC - Bitcoin';
+   explorerUrl='https://www.blockchain.com/explorer/addresses/btc/'+w;
+   explorerName='Voir sur Blockchain.com';
+ }
+ else if(w.startsWith('0x') && w.length==42){
+   type='ETH / USDT ERC20';
+   explorerUrl='https://etherscan.io/address/'+w;
+   explorerName='Voir sur Etherscan.io';
+ }
+ else if(w.startsWith('T') && w.length==34){
+   type='USDT TRC20 (Tron)';
+   explorerUrl='https://tronscan.org/#/address/'+w;
+   explorerName='Voir sur TronScan';
+ }
+
+ if(explorerUrl){
+   r.innerHTML='🔍 Type: <b>'+type+'</b><br><span style="color:#00FF88">'+w+'</span><br><br>⚠️ Si ce wallet a reçu beaucoup de petits montants de plusieurs personnes, c\'est une arnaque.<br><a class="link-btn" href="'+explorerUrl+'" target="_blank">🔎 '+explorerName+' →</a>';
+ } else {
+   r.innerHTML='❌ Format invalide. Vérifie que tu as copié toute l\'adresse.<br><br>BTC commence par 1, 3 ou bc1<br>ETH commence par 0x<br>USDT TRC20 commence par T';
+ }
 }
 </script>
 </body>
