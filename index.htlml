@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Dagavor - Décodeur</title>
+<title>Dagavor</title>
 <style>
 body{font-family:Arial;text-align:center;padding:20px;background:#f5f5f5}
 .box{background:white;padding:20px;border-radius:10px}
@@ -14,8 +14,8 @@ button{padding:12px 25px;background:green;color:white;border:none;border-radius:
 </head>
 <body>
 <div class="box">
-<h2>🛡️ Dagavor - Décodeur</h2>
-<p>Colle le code bizarre reçu par SMS :</p>
+<h2>🛡️ Dagavor</h2>
+<p>Colle le code bizarre :</p>
 <input id="code" placeholder="Ex: aHR0cHM6Ly9mYWtlLW10bi5jb20=">
 <br>
 <button onclick="decoder()">Décoder</button>
@@ -23,13 +23,13 @@ button{padding:12px 25px;background:green;color:white;border:none;border-radius:
 </div>
 <script>
 function decoder(){
- let c=document.getElementById("code").value;
- try{
-  let d=atob(c);
-  document.getElementById("resultat").innerHTML="Vrai lien caché :<br><span style='color:red'>"+d+"</span>";
- }catch{
-  document.getElementById("resultat").innerHTML="❌ Pas un code Base64 valide";
- }
+let c=document.getElementById("code").value;
+try{
+let d=atob(c);
+document.getElementById("resultat").innerHTML="Vrai lien: <br><span style='color:red'>"+d+"</span>";
+}catch{
+document.getElementById("resultat").innerHTML="❌ Pas valide";
+}
 }
 </script>
 </body>
