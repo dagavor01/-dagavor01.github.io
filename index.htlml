@@ -1,31 +1,96 @@
-<!-- SECTION PREMIUM INTERNATIONALE -->
-<div class="card" style="border:3px solid #0a2a5e; background:white;">
-  <h2 style="text-align:center">🌍 DAGAVOR PREMIUM - International</h2>
-  <p style="text-align:center">Choisissez votre méthode selon votre pays :</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAGAVOR - Anti-Arnaque 237</title>
+<style>
+body{font-family:Arial; background:#0a0a0a; color:white; margin:0; padding:15px;}
+.card{background:#1a1a1a; border-radius:15px; padding:20px; margin:15px 0; text-align:center; border:1px solid #333;}
+input{padding:14px; width:75%; border-radius:10px; border:none; margin:10px 0; font-size:16px;}
+button{padding:14px 25px; border-radius:10px; border:none; font-weight:bold; cursor:pointer; font-size:16px;}
+.result{margin-top:15px; padding:15px; border-radius:10px; font-weight:bold;}
+</style>
+</head>
+<body>
 
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+<h1 style="text-align:center; color:#ff0000;">🛡️ DAGAVOR</h1>
+<p style="text-align:center; color:#888;">Le premier anti-arnaque du Cameroun</p>
 
-    <!-- POUR CAMEROUN / AFRIQUE -->
-    <div style="border:2px solid #ff7900; padding:15px; border-radius:12px; text-align:center;">
-      <h3 style="color:#ff7900">🇨🇲 Afrique</h3>
-      <p><b>3000 FCFA / mois</b></p>
-      <p style="font-size:12px">Orange Money / MTN MoMo</p>
-      <a href="https://wa.me/237690000000?text=Premium DAGAVOR 3000F" style="background:#ff7900;color:white;padding:10px 15px;border-radius:20px;text-decoration:none;display:inline-block;">Payer OM</a>
-    </div>
-
-    <!-- POUR MONDE ENTIER -->
-    <div style="border:2px solid #0070ba; padding:15px; border-radius:12px; text-align:center;">
-      <h3 style="color:#0070ba">🌍 Monde / World</h3>
-      <p><b>$5 / month</b></p>
-      <p style="font-size:12px">PayPal / Visa / Alipay (China)</p>
-      <!-- REMPLACE PAR TON LIEN PAYPAL -->
-      <a href="https://www.paypal.com/paypalme/TONNOM/5" style="background:#0070ba;color:white;padding:10px 15px;border-radius:20px;text-decoration:none;display:inline-block;">Pay with PayPal</a>
-      <br><br>
-      <!-- REMPLACE PAR TON LIEN STRIPE -->
-      <a href="https://buy.stripe.com/test_TONTLIEN" style="background:black;color:white;padding:10px 15px;border-radius:20px;text-decoration:none;display:inline-block;">Pay with Card</a>
-    </div>
-
-  </div>
-
-  <p style="font-size:11px; text-align:center; margin-top:15px;">Contact: Mariopolsarl@gmail.com | Support 6 langues | Annulable à tout moment</p>
+<!-- 1. SCANNER DE LIENS -->
+<div class="card" style="border:2px solid #00ff00;">
+  <h2>🔗 Vérifier un lien suspect</h2>
+  <input id="linkInput" placeholder="Colle le lien ici: https://...">
+  <br>
+  <button onclick="checkLink()" style="background:#00ff00; color:black;">VÉRIFIER LE LIEN</button>
+  <div id="linkResult" class="result"></div>
 </div>
+
+<!-- 2. VERIFICATEUR DE NUMERO 237 - NOUVEAU -->
+<div class="card" style="border:3px solid #ff0000;">
+  <h2>📱 Vérifier un numéro OM/MoMo</h2>
+  <p style="color:#aaa;">Base anti-arnaque 237 - 127 numéros signalés</p>
+  <input id="numCheck" placeholder="Ex: 6 97 12 34 56">
+  <br>
+  <button onclick="checkNum()" style="background:#ff0000; color:white;">VÉRIFIER LE NUMÉRO</button>
+  <div id="numResult" class="result"></div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1PPi6WfPRsCA4i2IxMuGudDC4UAnwPWoBFilsbaGihVAIYA/viewform?usp=header" target="_blank" style="display:inline-block; margin-top:15px; padding:10px 15px; background:white; color:black; border-radius:8px; text-decoration:none; font-weight:bold;">🚨 Signaler un numéro arnaqueur</a>
+</div>
+
+<!-- 3. SECTION PREMIUM -->
+<div class="card" style="border:3px solid #0a2a5e; background:#0a1930;">
+  <h2 style="text-align:center;">DAGAVOR PREMIUM - International</h2>
+  <p style="text-align:center;">Choisissez votre méthode selon votre pays</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:15px;">
+    <!-- POUR CAMEROUN -->
+    <div style="border:2px solid #ff7900; padding:15px; border-radius:10px; background:#1a1a1a;">
+      <h3 style="color:#ff7900;">🌍 Afrique</h3>
+      <p><b>3000 FCFA / mois</b></p>
+      <p style="font-size:12px;">Orange Money / MTN MoMo</p>
+      <a href="https://wa.me/237690000000?text=Premium DAGAVOR Afrique" style="display:block; padding:10px; background:#ff7900; color:white; border-radius:8px; text-decoration:none; margin-top:10px;">Payer via WhatsApp</a>
+    </div>
+    <!-- POUR MONDE ENTIER -->
+    <div style="border:2px solid #0070ba; padding:15px; border-radius:10px; background:#1a1a1a;">
+      <h3 style="color:#0070ba;">🌐 Monde / World</h3>
+      <p><b>$5 / month</b></p>
+      <p style="font-size:12px;">PayPal / Visa / Alipay</p>
+      <a href="https://www.paypal.com/paypalme/TONNOM/5" style="display:block; padding:10px; background:#0070ba; color:white; border-radius:8px; text-decoration:none; margin-top:10px;">Pay with PayPal</a>
+      <a href="https://buy.stripe.com/test_TONTLIEN" style="display:block; padding:10px; background:white; color:black; border-radius:8px; text-decoration:none; margin-top:8px;">Pay with Card</a>
+    </div>
+  </div>
+</div>
+
+<p style="font-size:11px; text-align:center; margin-top:25px; color:#555;">© 2026 DAGAVOR - Protection 237 | dagavor01.github.io</p>
+
+<script>
+// --- CODE SCANNER LIEN ---
+function checkLink(){
+  let l=document.getElementById('linkInput').value;
+  let r=document.getElementById('linkResult');
+  if(!l){r.innerHTML="Colle un lien d'abord"; return;}
+  if(l.includes("bit.ly") || l.includes("t.me") || l.length < 15){
+    r.innerHTML="🔴 SUSPECT : Lien raccourci / suspect - Ne clique pas";
+    r.style.background="#ff0000"; r.style.color="white";
+  } else {
+    r.innerHTML="🟡 À vérifier : Reste vigilant, ne donne jamais ton code OM";
+    r.style.background="#ffaa00"; r.style.color="black";
+  }
+}
+// --- CODE VERIF NUMERO ---
+let blackList={"697123456":"Faux OM - 3 signalements","672000000":"Faux boutique Facebook","699000000":"Arnaque WhatsApp"};
+function checkNum(){
+  let n=document.getElementById('numCheck').value.replace(/\D/g,'');
+  let r=document.getElementById('numResult');
+  if(n.length<9){r.innerHTML="Entre un vrai numéro 237"; r.style.background="#333"; return;}
+  let shortN=n.slice(-9);
+  if(blackList[shortN]){
+    r.innerHTML="🔴 DANGER: "+blackList[shortN]+"<br>NE PAYE PAS ce numéro";
+    r.style.background="#ff0000"; r.style.color="white";
+  } else {
+    r.innerHTML="🟢 Aucun signalement pour "+n+"<br>Mais reste vigilant!";
+    r.style.background="#00aa00"; r.style.color="white";
+  }
+}
+</script>
+</body>
+</html>
